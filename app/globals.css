@@ -2,9 +2,212 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .nav-container {
+    display: none;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    height: 57px;
+    border-radius: 8px;
+    width: fit-content;
+    border: 1px solid hsl(221, 16%, 20%);
+  }
+
+  .list-item {
+    border-style: solid;
+    padding-right: 15px;
+    height: 25px;
+  }
+
+  .list-item:last-child {
+    padding-right: 0;
+  }
+
+  .btn-tab,
+  .btn-tab-active,
+  .btn-tab-focused {
+    position: relative;
+    top: -10px;
+    z-index: 2;
+  }
+
+  .btn-tab::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to-bottom,
+      hsla(222, 100%, 2%, 0.614),
+      hsla(198, 100%, 50%, 0.133)
+    );
+    border-radius: 8px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .btn-tab:hover::before,
+  .btn-tab-active:hover::before,
+  .btn-tab-focused:hover::before {
+    opacity: 1;
+  }
+
+  .btn-tab-active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, hsl(225, 100%, 2%), hsl(240, 57%, 18%));
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .btn-tab-focused::before {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .list-label {
+    position: absolute;
+    left: 1px;
+    right: 0;
+    top: 6.5px;
+    bottom: 0;
+    z-index: 1;
+    user-select: none;
+    font-size: 1rem;
+  }
+
+  .highlighted-tab {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 8px;
+    z-index: 0;
+  }
+
+  .boomerang-tab {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 8px;
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .boomerang-tab::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 8px;
+    background: linear-gradient(
+      to bottom,
+      hsl(225, 100%, 2%),
+      hsla(197, 100%, 50%, 0.118)
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .boomerang-tab:hover {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .highlight-tab-selected {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background: linear-gradient(
+      to bottom,
+      hsl(225, 100%, 2%),
+      hsla(197, 100%, 50%, 0.118)
+    );
+    border-radius: 8px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .highlight-tab-selected::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background: linear-gradient(
+      to bottom,
+      hsl(225, 100%, 2%),
+      hsl(240, 57%, 18%)
+    );
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .highlighted-tab-selected:hover {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .selected-tab {
+    position: absolute;
+    bottom: -10px;
+    left: 2px;
+    right: 0;
+    width: 5.25rem;
+    height: 4px;
+    background-color: hsl(154, 100%, 50%);
+    border-radius: 8px;
+    z-index: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .set {
+    background-image: url(../app/assets/01_background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(0, 0%, 9%);
 }
 
 @theme inline {
@@ -16,8 +219,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: hsl(0, 0%, 4%);
+    --foreground: hsl(0, 0%, 93%);
   }
 }
 
