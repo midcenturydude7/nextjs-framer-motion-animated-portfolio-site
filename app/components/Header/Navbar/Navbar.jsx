@@ -6,7 +6,9 @@ import { mobileNavItems } from "../../../lib/mobileNavItems";
 import { cn } from "../../../lib/utils";
 import { useNavContext } from "../../../contexts/NavContext";
 
-export default function Navbar() {
+export default function Navbar({ focused, setFocused }) {
+  const { selectedTab, setSelectedTab } = useNavContext();
+  
   return (
     <nav className="nav-container lg:flex lg:flex-grow lg:justify-center">
       <ul
