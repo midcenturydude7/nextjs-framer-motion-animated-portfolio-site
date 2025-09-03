@@ -1,3 +1,6 @@
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import Footer from "./components/Footer/Footer";
 import ClientLayout from "./components/ClientLayout/ClientLayout";
 import "./globals.css";
 
@@ -15,7 +18,9 @@ export default function RootLayout({ children }) {
       <body className="set font-[sofia-pro,_sans-serif] font-medium not-italic text-slate-100/70 antialiased">
         <ClientLayout>
           <div className="flex min-h-screen flex-col space-y-4 bg-gradient-to-b from-[rgba(12,12,39,0.83)] to-[rgba(0,2,8,0.5)]">
-            {children}
+            <Header />
+            <Main>{children}</Main>
+            <Footer />
           </div>
         </ClientLayout>
       </body>
