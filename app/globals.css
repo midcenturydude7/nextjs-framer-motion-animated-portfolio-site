@@ -73,7 +73,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, hsl(225, 100%, 2%), hsl(240, 57%, 18%));
+    background: linear-gradient(
+      to bottom,
+      hsl(225, 100%, 2%),
+      hsl(240, 57%, 18%)
+    );
     z-index: 1;
     opacity: 1;
     transition: opacity 1s ease-in-out;
