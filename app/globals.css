@@ -64,6 +64,7 @@
   .btn-tab-active:hover::before,
   .btn-tab-focused:hover::before {
     opacity: 1;
+    /* transition: opacity 1s ease-in-out; */
   }
 
   .btn-tab-active::before {
