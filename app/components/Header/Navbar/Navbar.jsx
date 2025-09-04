@@ -43,7 +43,7 @@ export default function Navbar({ focused, setFocused }) {
                 >
                   <span className="list-label">{label}</span>
                   {/* FOLLOW HIGHLIGHT: Animates when the button is focused and follows hover state */}
-                  {focused === path && (
+                  {focused === path ? (
                     <motion.div
                       transition={{
                         layout: {
@@ -63,9 +63,9 @@ export default function Navbar({ focused, setFocused }) {
                       )}
                       layoutId="highlight"
                     />
-                  )}
+                  ) : null}
                   {/* UNDERLINE: Animates/moves along selected path */}
-                  {selectedTab === path && (
+                  {selectedTab === path ? (
                     <motion.div
                       transition={{
                         layout: {
@@ -81,7 +81,30 @@ export default function Navbar({ focused, setFocused }) {
                       className="selected-tab bg-gradient-to-r from-[#0f2124] via-[#0400ff9a] to-[#0f2124] transition-colors duration-1000 ease-in-out"
                       layoutId="underline"
                     />
-                  )}
+                  ) : null}
+                  {/* "BOOMERANG" HIGHLIGHT: If new path isn't selected, highlight returns to selected path */}
+                  {!focused && selectedTab === path ? (
+                    <motion.div
+                      transition={{
+                        layout: {
+                          duration: 0.25,
+                          ease: "easeOut",
+                          type: "spring",
+                          bounce: 0,
+                          damping: 50,
+                          mass: 0.5,
+                          stiffness: 500,
+                        },
+                      }}
+                      className={cn(
+                        "boomerang-tab transition-colors duration-1000 ease-in-out",
+                        !focused && selectedTab
+                          ? "bg-gradient-to-b from-[#000208] to-[#00c3ff42] transition-colors duration-1000 ease-in-out"
+                          : "",
+                      )}
+                      layoutId="highlight"
+                    />
+                  ) : null}
                 </motion.button>
               </Link>
             </li>
