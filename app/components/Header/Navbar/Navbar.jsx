@@ -42,6 +42,28 @@ export default function Navbar({ focused, setFocused }) {
                   )}
                 >
                   <span className="list-label">{label}</span>
+                  {/* FOLLOW HIGHLIGHT: Animates when the button is focused and follows hover state */}
+                  {focused === path && (
+                    <motion.div
+                      transition={{
+                        layout: {
+                          duration: 0.25,
+                          ease: "easeOut",
+                          type: "spring",
+                          bounce: 0,
+                          damping: 50,
+                          mass: 0.5,
+                          stiffness: 500,
+                        },
+                      }}
+                      className={cn(
+                        selectedTab === path
+                          ? "highlight-tab-selected"
+                          : "highlighted-tab bg-gradient-to-b from-30% to-[#00c3ff42] to-100% transition-colors duration-1000 ease-in-out",
+                      )}
+                      layoutId="highlight"
+                    />
+                  )}
                 </motion.button>
               </Link>
             </li>
