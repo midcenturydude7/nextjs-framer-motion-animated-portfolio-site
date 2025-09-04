@@ -64,6 +64,24 @@ export default function Navbar({ focused, setFocused }) {
                       layoutId="highlight"
                     />
                   )}
+                  {/* UNDERLINE: Animates/moves along selected path */}
+                  {selectedTab === path && (
+                    <motion.div
+                      transition={{
+                        layout: {
+                          duration: 0.25,
+                          ease: "easeOut",
+                          type: "spring",
+                          bounce: 0,
+                          damping: 50,
+                          mass: 0.5,
+                          stiffness: 500,
+                        },
+                      }}
+                      className="selected-tab bg-gradient-to-r from-[#0f2124] via-[#0400ff9a] to-[#0f2124] transition-colors duration-1000 ease-in-out"
+                      layoutId="underline"
+                    />
+                  )}
                 </motion.button>
               </Link>
             </li>
