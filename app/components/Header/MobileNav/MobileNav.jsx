@@ -5,6 +5,7 @@ import { motion, useCycle, AnimatePresence } from "framer-motion";
 import { cn } from "../../../lib/utils";
 import { mobileNavItems } from "../../../lib/mobileNavItems";
 import { useNavContext } from "../../../contexts/NavContext";
+import { menuSlide, slide } from "../../../lib/anim";
 
 export default function MobileNav({ focused, setFocused }) {
   const { selectedTab, setSelectedTab } = useNavContext();
