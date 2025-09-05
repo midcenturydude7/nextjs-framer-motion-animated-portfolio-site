@@ -59,7 +59,7 @@ export default function Navbar({ focused, setFocused }) {
                       className={cn(
                         selectedTab === path
                           ? "highlight-tab-selected"
-                          : "highlighted-tab bg-gradient-to-b from-30% to-[#00c3ff42] to-100% transition-colors duration-1000 ease-in-out",
+                          : "highlighted-tab bg-gradient-to-b from-[#00020825] from-30% via-[#0400ff2f] to-[#00c3ff27] to-100% transition-colors duration-1000 ease-in-out",
                       )}
                       layoutId="highlight"
                     />
