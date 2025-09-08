@@ -18,7 +18,7 @@ export default function MobileNav({ focused, setFocused }) {
         <motion.button
           animate={mobileNavbar ? "open" : "closed"}
           onClick={() => toggleMobileNavbar()}
-          className="flex flex-col space-y-2"
+          className="group flex flex-col space-y-2"
         >
           {/* HAMBURGER TO X ANIMATION */}
           {/* Each span is a line in the hamburger icon */}
@@ -30,22 +30,35 @@ export default function MobileNav({ focused, setFocused }) {
               },
               open: { rotate: 45, y: 8 },
             }}
-            className="block h-[0.125rem] w-9 rounded-lg bg-gradient-to-r from-[#45e1e698] via-[#0084ffad] to-[#45e1e698] transition-colors duration-1000 ease-in-out"
-          />
+            className="relative block h-[0.125rem] w-9 rounded-lg overflow-hidden"
+          >
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#45e1e698] via-[#0084ffad] to-[#45e1e698] rounded-lg" aria-hidden="true" />
+            {/* Hover gradient with opacity transition */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0f2124] via-[#0084ffad] to-[#0f2124] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out" aria-hidden="true" />
+          </motion.span>
           <motion.span
             variants={{
               closed: { opacity: 1 },
               open: { opacity: 0 },
             }}
-            className="block h-[0.125rem] w-9 rounded-lg bg-gradient-to-r from-[#0f2124] via-[#0084ffad] to-[#0f2124] transition-colors duration-1000 ease-in-out"
-          />
+            className="relative block h-[0.125rem] w-9 rounded-lg overflow-hidden"
+          >
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0f2124] via-[#0084ffad] to-[#0f2124] rounded-lg" aria-hidden="true" />
+          </motion.span>
           <motion.span
             variants={{
               closed: { rotate: 0, y: 0 },
               open: { rotate: -45, y: -12 },
             }}
-            className="block h-[0.125rem] w-9 rounded-lg bg-gradient-to-r from-[#45e1e698] via-[#0084ffad] to-[#45e1e698] transition-colors duration-1000 ease-in-out"
-          />
+            className="relative block h-[0.125rem] w-9 rounded-lg overflow-hidden"
+          >
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#45e1e698] via-[#0084ffad] to-[#45e1e698] rounded-lg" aria-hidden="true" />
+            {/* Hover gradient with opacity transition */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0f2124] via-[#0084ffad] to-[#0f2124] rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out" aria-hidden="true" />
+          </motion.span>
         </motion.button>
       </div>
       <AnimatePresence mode="wait">
