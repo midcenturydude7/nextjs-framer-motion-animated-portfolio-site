@@ -1,10 +1,11 @@
 export default function Home() {
   return (
-    <div className="flex w-full flex-col px-6 sm:px-10 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-      <div className="flex min-w-full flex-wrap content-stretch items-start justify-center gap-4">
-        <div className="flex min-h-60 min-w-[90%] items-center justify-center border border-slate-300/70 md:min-w-[50%] lg:min-w-[25%]">
-          <h1>1</h1>
-        </div>
+    <div className="flex w-full justify-center px-6 sm:px-10 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <div className="grid min-h-[800px] w-full grid-cols-1 grid-rows-4 gap-8 md:max-w-[90%] lg:max-w-[55%]">
+        <div className="border border-slate-300/20">1</div>
+        <div className="border border-slate-300/20">2</div>
+        <div className="border border-slate-300/20">3</div>
+        <div className="border border-slate-300/20">4</div>
       </div>
     </div>
   );
