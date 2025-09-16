@@ -1,11 +1,19 @@
 export default function Home() {
   return (
-    <div className="flex w-full justify-center px-6 sm:px-10 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-      <div className="grid min-h-[800px] w-full grid-cols-1 grid-rows-4 gap-8 md:max-w-[90%] lg:max-w-[55%]">
-        <div className="border border-slate-300/20">1</div>
-        <div className="border border-slate-300/20">2</div>
-        <div className="border border-slate-300/20">3</div>
-        <div className="border border-slate-300/20">4</div>
+    <div className="flex h-[80vh] w-full items-center justify-center px-2 sm:px-6 md:h-[50vh] md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+      <div className="mx-auto grid h-full w-full grid-rows-4 gap-8 md:max-w-[90%] md:grid-cols-[1fr_3fr] md:grid-rows-3 lg:max-w-[55%]">
+        <div className="h-full w-full place-content-center border border-slate-300/20">
+          1
+        </div>
+        <div className="h-full w-full place-content-center border border-slate-300/20">
+          2
+        </div>
+        <div className="h-full w-full place-content-center border border-slate-300/20">
+          3
+        </div>
+        <div className="h-full w-full place-content-center border border-slate-300/20">
+          4
+        </div>
       </div>
     </div>
   );
