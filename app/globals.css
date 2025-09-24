@@ -204,9 +204,21 @@
   }
 
   .set {
+    position: relative;
+  }
+
+  .set::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url(../app/assets/01_background.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.6;
   }
 }
 
