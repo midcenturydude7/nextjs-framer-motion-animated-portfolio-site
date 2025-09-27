@@ -30,6 +30,7 @@ export default function Home() {
         <div className="grid h-full w-full place-content-center rounded-none border border-slate-300/20 bg-slate-50/5 [grid-area:tab-2] md:relative md:z-10 md:h-[15vh] md:translate-x-40 md:rounded-lg">
           2
         </div>
+        // cell #3 - tab 3 content
         <div className="grid h-full w-full place-content-center rounded-none border border-slate-300/20 bg-slate-50/5 [grid-area:tab-3] md:relative md:z-10 md:h-[15vh] md:translate-x-40 md:rounded-lg">
           3
         </div>
